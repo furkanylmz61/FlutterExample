@@ -13,10 +13,23 @@ dependencies:
   
   cupertino_icons: ^1.0.6
   google_mlkit_image_labeling: ^0.12.0
+  google_mlkit_text_recognition:
+  google_mlkit_face_detection:
+  google_mlkit_object_detection:
+  camera: ^0.10.5+4
+  image_picker: ^1.0.4
+  path_provider: ^2.1.1
+  palm_api: ^0.0.3
+
+  get_it: ^7.2.0
+  dio: 5.2.1+1
+  retrofit: ^4.0.1
 
   #STATE MANAGEMENT
   stacked: ^3.4.2
   stacked_services: ^1.5.0
+  google_mlkit_commons: 
+
 
 dev_dependencies:
   flutter_test:
@@ -24,15 +37,14 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   build_runner: ^2.4.9
   stacked_generator: ^1.6.0
+  retrofit_generator:
 
 flutter:
 
  
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-
   
+  assets:
+    - assets/
+    - assets/ml/

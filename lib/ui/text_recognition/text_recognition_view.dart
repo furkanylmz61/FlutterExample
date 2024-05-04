@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class TextRecognitionView extends StatelessWidget {
   const TextRecognitionView({super.key});
 
