@@ -8,9 +8,7 @@ class MainView extends StatelessWidget{
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.black,
-      body: Column(children: [
-        
-      ],),
+      body: Column(children: [],),
     );
   }
 

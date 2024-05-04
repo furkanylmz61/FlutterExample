@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ml_kit_akademi_examples/ui/splash/splash_view_model.dart';
+import 'package:stacked/stacked.dart';
 
 class SplashView extends StatelessWidget{
   const SplashView({super.key});
@@ -6,14 +8,24 @@ class SplashView extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.black,
+    return ViewModelBuilder.reactive
+    (viewModelBuilder: () => SplashViewModel(), 
+    onViewModelReady: (model) => model.init ,
+    builder: (context, viewModel, child) => Scaffold(
+
+      backgroundColor: Colors.white,
       body: Column(children: [
-        Text(
-          "Ml kit examples",
-        style: TextStyle(fontSize: 24),)
-      ],),
-    );
+      
+      Center(
+        child: Text(
+          "Ml Kit Examples",
+          style: TextStyle(fontSize: 24),
+        ),
+      )
+      
+      ]),
+    )
+    ); 
   }
 
 }
