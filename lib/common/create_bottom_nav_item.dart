@@ -36,7 +36,7 @@ Widget getViewForIndex(int index){
     case 1 :
     return const FaceDetectionView();
     case 2 :
-    return const TextRecognitionView();
+    return const TextRecognitonView();
     default:
       return Container();
     }

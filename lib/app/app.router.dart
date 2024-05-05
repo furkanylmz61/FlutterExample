@@ -5,21 +5,36 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i4;
+import 'package:flutter/material.dart' as _i7;
 import 'package:flutter/material.dart';
+import 'package:ml_kit_akademi_examples/ui/face_detection/face_detection_view.dart'
+    as _i6;
+import 'package:ml_kit_akademi_examples/ui/image_labeling/image_labeling_view.dart'
+    as _i4;
 import 'package:ml_kit_akademi_examples/ui/main/main_view.dart' as _i3;
 import 'package:ml_kit_akademi_examples/ui/splash/splash_view.dart' as _i2;
+import 'package:ml_kit_akademi_examples/ui/text_recognition/text_recognition_view.dart'
+    as _i5;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i5;
+import 'package:stacked_services/stacked_services.dart' as _i8;
 
 class Routes {
   static const splashView = '/';
 
   static const mainView = '/main-view';
 
+  static const imageLabelingView = '/image-labeling-view';
+
+  static const textRecognitonView = '/text-recogniton-view';
+
+  static const faceDetectionView = '/face-detection-view';
+
   static const all = <String>{
     splashView,
     mainView,
+    imageLabelingView,
+    textRecognitonView,
+    faceDetectionView,
   };
 }
 
@@ -33,18 +48,48 @@ class StackedRouter extends _i1.RouterBase {
       Routes.mainView,
       page: _i3.MainView,
     ),
+    _i1.RouteDef(
+      Routes.imageLabelingView,
+      page: _i4.ImageLabelingView,
+    ),
+    _i1.RouteDef(
+      Routes.textRecognitonView,
+      page: _i5.TextRecognitonView,
+    ),
+    _i1.RouteDef(
+      Routes.faceDetectionView,
+      page: _i6.FaceDetectionView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return _i4.MaterialPageRoute<dynamic>(
+      return _i7.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
       );
     },
     _i3.MainView: (data) {
-      return _i4.MaterialPageRoute<dynamic>(
+      return _i7.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.MainView(),
+        settings: data,
+      );
+    },
+    _i4.ImageLabelingView: (data) {
+      return _i7.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i4.ImageLabelingView(),
+        settings: data,
+      );
+    },
+    _i5.TextRecognitonView: (data) {
+      return _i7.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i5.TextRecognitonView(),
+        settings: data,
+      );
+    },
+    _i6.FaceDetectionView: (data) {
+      return _i7.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i6.FaceDetectionView(),
         settings: data,
       );
     },
@@ -57,7 +102,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i5.NavigationService {
+extension NavigatorStateExtension on _i8.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -86,6 +131,48 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToImageLabelingView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.imageLabelingView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToTextRecognitonView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.textRecognitonView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToFaceDetectionView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.faceDetectionView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -108,6 +195,48 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.mainView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithImageLabelingView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.imageLabelingView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithTextRecognitonView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.textRecognitonView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithFaceDetectionView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.faceDetectionView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
